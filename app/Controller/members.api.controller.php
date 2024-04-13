@@ -14,11 +14,11 @@ class MembersApiController extends ApiController{
 
     public function getUsers($params=[]){
         if(empty($params['ID'])){
-            $user=$this->model->getMember($params['ID']);
-            if($user){
-                return $this->view->response($user,200);
+            $member=$this->model->getMember($params['ID']);
+            if($member){
+                return $this->view->response($member,200);
             }
-            return $this->view->response("User not found",404);
+            return $this->view->response("Member not found",404);
         }
         $members=$this->model->getMembers();
         if($members){

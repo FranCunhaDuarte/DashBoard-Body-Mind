@@ -25,7 +25,7 @@ class HomeApiModel{
     }
 
     public function getNewMembers($date,$actualDate){
-        $query=$this->db->prepare('SELECT COUNT(*) FROM members WHERE join_date BETWEEN ? AND ?');
+        $query=$this->db->prepare('SELECT COUNT(*) FROM member WHERE join_date BETWEEN ? AND ?');
         $query->execute([$date,$actualDate]);
         $newMembers=$query->fetch(PDO::FETCH_OBJ);
         return $newMembers;
